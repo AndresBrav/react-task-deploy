@@ -1,12 +1,11 @@
-import React from "react";
+import { createContext } from "react";
 
-const TaskContext = (props) => {
-  return (
-    <>
-      <h1>Componente Context</h1>
-      {props.children} {/* aqui se genera todo el codigo */}
-    </>
-  );
+export const TaskContext = createContext();
+
+export const TaskContextProvider = (props) => {
+  let x = 20;
+
+  return <TaskContext.Provider value={x}>{props.children}</TaskContext.Provider>;
 };
 
 export default TaskContext;
